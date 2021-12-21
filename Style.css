@@ -35,6 +35,9 @@
 .onPage{
     text-decoration: none;
     color: #000;
+}
+
+.onPage:active{
     border-bottom: 2px solid #FF748D;
 }
 
@@ -143,7 +146,7 @@
     width: 100%;
     height: 586px;
     margin-bottom: 20px;
-    background-image: url('./Img/Music.jpg');
+    background-image: url('./Music.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -234,91 +237,109 @@
 }
 
 .sInsUpC {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 75px 0 75px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 75px 0 75px 0;
 }
 
-.sCon {     
-    background: rgb(196, 196, 196, 0.2);    
-    height: 400px;  
-    box-shadow: 0px 0px 20px #5C5696;
+.sCon {		
+	background: rgb(196, 196, 196, 0.2);	
+	height: 450px;	
+	box-shadow: 0px 0px 20px #5C5696;
+}
+
+.sCon1 {		
+	background: rgb(196, 196, 196, 0.2);	
+	height: 480px;	
+	box-shadow: 0px 0px 20px #5C5696;
 }
 
 .sCon_content {
-    z-index: 1;
-    position: relative; 
-    height: 100%;
+	z-index: 1;
+	position: relative;	
+	height: 100%;
 }
 
 .login {
-    width: 320px;
-    padding: 30px;
-    padding-top: 80px;
+	width: 320px;
+	padding: 30px;
+	padding-top: 80px;
     box-sizing: border-box;
 }
 
 .login_field {
-    padding: 20px 0px;  
-    position: relative; 
+	padding: 20px 0px;	
+	position: relative;	
 }
 
 .login_icon {
-    position: absolute;
-    top: 35px;
-    color: #7875B5;
+	position: absolute;
+	top: 35px;
+	color: #7875B5;
 }
 
 .login_input {
-    border: none;
-    border-bottom: 2px solid #D1D1D4;
-    background: none;
-    padding: 10px;
-    padding-left: 24px;
-    font-weight: 700;
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
     font-size: 17px;
-    width: 85%;
-    transition: .2s;
+    letter-spacing: 2px;
+	width: 85%;
+	transition: .2s;
+}
+.nl{
+    display: flex;
+    justify-content: space-between;
+}
+
+.message{
+    color: rgb(255, 0, 0, 0.8);
+}
+
+#lastnameMessage{
+    margin-right: 13px;
 }
 
 .login_input:active,
 .login_input:focus,
 .login_input:hover {
-    outline: none;
-    border-bottom-color: #6A679E;
+	outline: none;
+	border-bottom-color: #6A679E;
 }
 
 .login_submit {
-    background: #fff;
-    font-size: 14px;
-    margin-top: 30px;
-    padding: 16px 20px;
-    border-radius: 26px;
-    border: 1px solid #D4D3E8;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    color: #4C489D;
-    box-shadow: 0px 4px 2px #5C5696;
-    cursor: pointer;
-    transition: .2s;
+	background: #fff;
+	font-size: 14px;
+	margin-top: 15px;
+    margin-left: 30px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	width: 80%;
+	color: #4C489D;
+	box-shadow: 0px 4px 2px #5C5696;
+	cursor: pointer;
+	
 }
 
-.login_submit:active,
-.login_submit:focus,
 .login_submit:hover {
-    color: #fff;
-  background: #6A679E;
-    outline: none;
+	color: #fff;
+    background: #6A679E;
+	outline: none;
 }
 
 .button_icon {
-  color: #6A679E;
+    color: #6A679E;
     font-size: 24px;
-    margin-left: auto;
+	margin-left: auto;
 
 }
 .login_submit:hover i{
@@ -327,13 +348,13 @@
 
 
 .signUp {
-    width: 320px;
-    padding: 30px;
-    padding-top: 35px;    
+	width: 320px;
+	padding: 30px;
+	padding-top: 35px;    
 }
 
 .signUp_field {
-    padding: 10px 0px;  
+	padding: 10px 0px;	
     display: flex;
     justify-content: space-between;
     margin-right: 15px;
@@ -345,17 +366,18 @@
 }
   
 .signUp_input {
-    border: none;
-    border-bottom: 2px solid #D1D1D4;
-    background: none;
-    font-weight: 600;
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	font-weight: 600;
     font-size: 16px;
-    width: 100%;
-    transition: .2s;
+    letter-spacing: 2px;
+	width: 100%;
+	transition: .2s;
 }
 
 input[type="date"]{
-    font-weight: 600;
+	font-weight: 600;
     font-size: 16px;
     color: #757575;
     cursor: pointer;
@@ -372,11 +394,9 @@ input[type="date"]{
     font-size: 16px;
 }
 
-.genderSelection:active,
-.genderSelection:focus,
 .genderSelection:hover{
     outline: none;
-    border-bottom-color: #6A679E;
+	border-bottom-color: #6A679E;
     transition: .2s;
 }
 
@@ -392,40 +412,38 @@ input[type="radio"]{
 .signUp_input:active,
 .signUp_input:focus,
 .signUp_input:hover {
-    outline: none;
-    border-bottom-color: #6A679E;
+	outline: none;
+	border-bottom-color: #6A679E;
 }
 
 .signUp_submit {
-    background: #fff;
-    font-size: 14px;
+	background: #fff;
+	font-size: 14px;
     margin-left: 30px;
-    padding: 16px 20px;
-    border-radius: 26px;
-    border: 1px solid #D4D3E8;
-    width: 50%;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    color: #4C489D;
-    box-shadow: 0px 4px 2px #5C5696;
-    cursor: pointer;
-    transition: .2s;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+    width: 80%;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	color: #4C489D;
+	box-shadow: 0px 4px 2px #5C5696;
+	cursor: pointer;
+	transition: .2s;
 }
 
-.signUp_submit:active,
-.signUp_submit:focus,
 .signUp_submit:hover {
-    color: #fff;
+	color: #fff;
     background: #6A679E;
-    outline: none;
+	outline: none;
 }
 
 .signUp_icon {
-  color: #6A679E;
-    font-size: 24px;
-    margin-left: auto;
+    color: #6A679E;
+	font-size: 24px;
+	margin-left: auto;
 
 }
 .signUp_submit:hover i{
