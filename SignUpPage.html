@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
     <title>Sign Up</title>
@@ -18,47 +18,56 @@
             <li>Products</li>
             <li>About Us</li>
             <li>Contact Us</li>
-            <button class="signInBtn"><a href="SignInPage.html" >Sign In</a></button>
-            <button class="signUpBtn"><a href="SignUpPage.html" >Sign Up</a></button>
+            <a href="SignInPage.html"><button class="signInBtn">Sign In</button></a>
+            <a href="SignUpPage.html"><button class="signUpBtn">Sign Up</button></a>
         </ul>
     </div>
 </header>
 
 <div class="sInsUpC">
-	<div class="sCon">
+	<div class="sCon1" id="sCon1">
 		<div class="sCon_content">
-			<form class="signUp">
+            <form class="signUp">
                 <div class="row">
                     <div class="signUp_field">
-                        <input type="text" class="signUp_input" placeholder="First name">
+                        <input type="text" class="signUp_input" placeholder="Firstname" id="name">
                     </div>
                     <div class="signUp_field">
-                        <input type="text" class="signUp_input" placeholder="Lastname">
+                        <input type="text" class="signUp_input" placeholder="Lastname" id="lastname">
                     </div>
-                </div>   
-                    <div class="signUp_field">
-                        <input type="email" class="signUp_input" placeholder="Email address">
+                </div>
+                <div class="nl">
+                    <label for="name" id="nameMessage" class="message"></label>
+                    <label for="lastname" id="lastnameMessage" class="message"></label>
+                </div>
+                <div class="signUp_field">
+                    <input type="text" class="signUp_input" placeholder="Username" id="username">
+                </div>
+                <label for="username" id="usernameMessage" class="message"></label>
+                <div class="signUp_field">
+                    <input type="text" class="signUp_input" placeholder="Email address" id="email">
+                </div>
+                <label for="email" id="emailMessage" class="message"></label>
+                <div class="signUp_field">
+                    <input type="password" class="signUp_input" placeholder="Password" id="password">
+                </div>
+                <label for="password" id="passwordMessage" class="message"></label>
+                <div class="signUp_field">
+                    <input type="date" class="signUp_input" id="date">
+                </div>
+                <label for="date" id="dateMessage" class="message"></label>
+                <div class="signUp_field">
+                    <div class="genderSelection">
+                        <label for="M">Male</label>
+                        <input id="M gender" type="radio" name="Gender">
                     </div>
-                    <div class="signUp_field">
-                        <input type="password" class="signUp_input" placeholder="Password">
+                    <div class="genderSelection">
+                        <label for="F">Female</label>
+                        <input id="F gender" type="radio" name="Gender">
                     </div>
-                    <div class="signUp_field">
-                        <input type="date" class="signUp_input">
-                    </div>
-                    <div class="signUp_field">
-                        <div class="genderSelection">
-                            <label for="M">Male</label>
-                            <input id="M" type="radio" name="Gender">
-                        </div>
-                        <div class="genderSelection">
-                            <label for="F">Female</label>
-                            <input id="F" type="radio" name="Gender">
-                        </div>
-                    </div>
-
-				
-			</form>
-            <button class="button signUp_submit">
+                </div>            
+            </form>
+            <button onclick="myFunction()" class="button signUp_submit" id="signUpBtn">
                 <span class="button_text">Create Account</span>
                 <i class="button_icon fas fa-chevron-right"></i>
             </button>
@@ -89,6 +98,156 @@
     </div>
 </footer>
 
-    
+<script>
+var emailRegex = /^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/;
+var passwordRegex = /^[A-Z][a-z]+\d/;
+var nameRegex = /^[A-Z][a-z]/;
+var lastNameRegex = /^[A-Z][a-z]/;
+var usernameRegex = /^[A-Za-z]\w{6,14}$/;
+
+var signUpMsgBtn = document.getElementById("signUpBtn");
+
+var nameMsg = document.getElementById("nameMessage");
+var lastNameMsg = document.getElementById("lastnameMessage");
+var usernameMsg = document.getElementById("usernameMessage");
+var emailMsg = document.getElementById("emailMessage");
+var passwordMsg = document.getElementById("passwordMessage");
+var dateMsg = document.getElementById("dateMessage");
+
+
+//Validimi per SignUp form
+signUpMsgBtn.addEventListener("click", function(event){
+    var name = document.getElementById('name').value;
+    var lastname = document.getElementById('lastname').value;
+    var username = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById("password").value;
+    var date = document.getElementById('date').value;
+
+
+    if(name ===""){
+        nameMsg.innerText = "Type your name";
+        event.preventDefault();
+        let myFunction = function(){
+            document.getElementById("sCon1").style.height = "630px";
+        }
+        myFunction();
+    }
+    else{
+        if(nameRegex.test(name)){
+            alert("Name: " + name);
+            event.preventDefault();
+        }
+        else{
+            nameMsg.innerText = "Name should start \n with a capital letter";
+            event.preventDefault();
+            let myFunction = function(){
+                document.getElementById("sCon1").style.height = "630px";
+            }
+            myFunction();
+        }
+    }
+
+    if(lastname === ""){
+        lastNameMsg.innerText = "Type your lastname";
+        event.preventDefault();
+        let myFunction = function(){
+            document.getElementById("sCon1").style.height = "630px";
+        }
+        myFunction();
+    }
+    else{
+        if(lastNameRegex.test(lastname)){
+            alert("Lastname: " + lastname);
+            event.preventDefault();
+        }
+        else{
+            lastNameMsg.innerText = "Lastname should start \n with a capital letter";
+            event.preventDefault();
+            let myFunction = function(){
+                document.getElementById("sCon1").style.height = "630px";
+            }
+            myFunction();
+        }
+    }
+
+    if(username === ""){
+        usernameMsg.innerText = "Type your username";
+        event.preventDefault();
+        let myFunction = function(){
+            document.getElementById("sCon1").style.height = "630px";
+        }
+        myFunction();
+    }
+    else{
+        if(usernameRegex.test(username)){
+            alert("Username: " + username);
+            event.preventDefault();
+        }
+        else{
+            usernameMsg.innerText = "Username should be between 6 and 14 characters"
+            event.preventDefault();
+            let myFunction = function(){
+                document.getElementById("sCon1").style.height = "630px";
+            }
+            myFunction();
+        }
+    }
+
+    if(email === ""){
+        emailMsg.innerText = "Type your email";
+        event.preventDefault();
+        let myFunction = function(){
+            document.getElementById("sCon1").style.height = "630px";
+        }
+        myFunction();
+    }
+    else{
+        if(emailRegex.test(email)){
+            alert("Email: " + email);
+        }
+        else{
+            emailMsg.innerText = "Type a valid email address";
+            event.preventDefault();
+            let myFunction = function(){
+                document.getElementById("sCon1").style.height = "630px";
+            }
+            myFunction();
+        }
+    }
+
+    if(password === ""){
+        passwordMsg.innerText = "Type your password"; 
+        event.preventDefault();
+        let myFunction = function(){
+            document.getElementById("sCon1").style.height = "630px";
+        }
+        myFunction();
+    }
+    else{
+        if(passwordRegex.test(password)){
+            alert("Password: " + password);
+        }
+        else{
+            passwordMsg.innerText = "Wrong password"
+            event.preventDefault();
+            let myFunction = function(){
+                document.getElementById("sCon1").style.height = "630px";
+            }
+            myFunction();
+        }
+    }
+
+    if(date === ""){
+        dateMsg.innerText = "Fill your birthdate";
+        event.preventDefault();
+        let myFunction = function(){
+            document.getElementById("sCon1").style.height = "630px";
+        }
+        myFunction();
+    }
+});
+
+</script>
 </body>
 </html>
