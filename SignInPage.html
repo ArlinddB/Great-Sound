@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
     <title>Sign In</title>
@@ -18,8 +18,8 @@
             <li>Products</li>
             <li>About Us</li>
             <li>Contact Us</li>
-            <button class="signInBtn"><a href="SignInPage.html" class="btn">Sign In</a></button>
-            <button class="signUpBtn"><a href="SignUpPage.html" >Sign Up</a></button>
+            <a href="SignInPage.html"><button class="signInBtn">Sign In</button></a>
+            <a href="SignUpPage.html"><button class="signUpBtn">Sign Up</button></a>
         </ul>
     </div>
 </header>
@@ -30,17 +30,19 @@
 			<form class="login">
 				<div class="login_field">
 					<i class="login_icon fas fa-user"></i>
-					<input type="text" class="login_input" placeholder="User name / Email">
+					<input type="text" class="login_input" placeholder="Email" id="email">
+                    <label for="email" id="emailMessage" class="message"></label>
 				</div>
 				<div class="login_field">
 					<i class="login_icon fas fa-lock"></i>
-					<input type="password" class="login_input" placeholder="Password">
-				</div>
-				<button class="button login_submit">
-					<span class="button_text">Log In Now</span>
-					<i class="button_icon fas fa-chevron-right"></i>
-				</button>				
+					<input type="password" class="login_input" placeholder="Password" id="password">
+                    <label for="password" id="passwordMessage" class="message"></label>
+				</div>				
 			</form>
+            <button class="button login_submit" id="signInBtn">
+                <span class="button_text">Log In Now</span>
+                <i class="button_icon fas fa-chevron-right"></i>
+            </button>
 		</div>
 	</div>
 </div>
@@ -66,8 +68,48 @@
             <p class="copyrights">Copyright © 2021. Company. All rights reserved</p>
         </div>
     </div>
-</footer>
+</footer>    
+<script>
+var emailRegex = /^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/;
+var passwordRegex = /^[A-Z][a-z]+\d/;
 
+var signInMsgBtn = document.getElementById("signInBtn");
+
+var emailMsg = document.getElementById("emailMessage");
+var passwordMsg = document.getElementById("passwordMessage");
+
+//Validimi per SignIn form
+signInMsgBtn.addEventListener("click", function(event){
+    var email = document.getElementById('email').value;
+    var password = document.getElementById("password").value;
     
+    if(email === ""){
+        emailMsg.innerText = "Type your email";
+        event.preventDefault();
+    }
+    else{
+        if(emailRegex.test(email)){
+            alert("Email: " + email);
+        }
+        else{
+            emailMsg.innerText = "Type a valid email address";
+            event.preventDefault();
+        }
+    }
+
+    if(password ===""){
+        passwordMsg.innerText = "Type your password"; 
+    }
+    else{
+        if(passwordRegex.test(password)){
+            alert("Password: " + password);
+        }
+        else{
+            passwordMsg.innerText = "Wrong password"
+            event.preventDefault();
+        }
+    }
+});
+</script>
 </body>
 </html>
