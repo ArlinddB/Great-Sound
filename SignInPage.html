@@ -1,115 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
     <title>Sign In</title>
 </head>
+
 <body>
-<header id="header">
-    <div class="items">
-        <h1 class="logo">LOGO</h1>
-        <ul class="menu">
-            <li><a href="index.html" class="onPage">Home</a></li>
-            <li><a href="Products.html" class="onPage">Products</a></li>
-            <li>About Us</li>
-            <li>Contact Us</li>
+    <nav>
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+        <ul class="mainMenu">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
             <a href="SignInPage.html"><button class="signInBtn">Sign In</button></a>
-            <a href="SignUpPage.html"><button class="signUpBtn">Sign Up</button></a>
+            <div class="closeMenu"><i class="fa fa-times"></i></div>
         </ul>
-    </div>
-</header>
+    </nav>
 
-<div class="sInsUpC">
-	<div class="sCon">
-		<div class="sCon_content">
-			<form class="login">
-				<div class="login_field">
-					<i class="login_icon fas fa-user"></i>
-					<input type="text" class="login_input" placeholder="Email" id="email">
-                    <label for="email" id="emailMessage" class="message"></label>
-				</div>
-				<div class="login_field">
-					<i class="login_icon fas fa-lock"></i>
-					<input type="password" class="login_input" placeholder="Password" id="password">
-                    <label for="password" id="passwordMessage" class="message"></label>
-				</div>				
-			</form>
-            <button class="button login_submit" id="signInBtn">
-                <span class="button_text">Log In Now</span>
-                <i class="button_icon fas fa-chevron-right"></i>
-            </button>
-		</div>
-	</div>
-</div>
-
-<footer>
-    <div class="footer-1">
-        <a href="#"><i class="fab fa-facebook icons fa-3x"></i></a>
-        <a href="#"><i class="fab fa-instagram icons fa-3x"></i></a>
-        <a href="#"><i class="fab fa-twitter icons fa-3x"></i></a>
-        <a href="#"><i class="fab fa-youtube icons fa-3x"></i></a>
-        <a href="#"><i class="fab fa-pinterest icons fa-3x"></i></a>
-
-    </div>
-    <div class="footer-2">
-        <div class="footer-menu">
-            <ul>
-                <a href="#"><li>About Us</li></a>
-                <p>•</p>
-                <a href="#"><li>Contact Us</li></a>
-                <p>•</p>
-                <a href="#"><li>Privacy Policy</li></a>
-            </ul>
-            <p class="copyrights">Copyright © 2021. Company. All rights reserved</p>
+    <div class="sInsUpC">
+        <div class="sCon" id="sCon">
+            <div class="sCon_content">
+                <form class="login">
+                    <div class="login_field">
+                        <i class="login_icon fas fa-user"></i>
+                        <input type="text" class="login_input" placeholder="Email" id="email">
+                        <label for="email" id="emailMessage" class="message"></label>
+                    </div>
+                    <div class="login_field">
+                        <i class="login_icon fas fa-lock"></i>
+                        <input type="password" class="login_input" placeholder="Password" id="password">
+                        <label for="password" id="passwordMessage" class="message"></label>
+                    </div>
+                </form>
+                <button onclick="myFunction()" class="button login_submit" id="signInBtn">
+                    <span class="button_text">Log In Now</span>
+                    <i class="button_icon fas fa-chevron-right"></i>
+                </button>
+                <span class="createAccount">Still don't have an account?
+                    <a href="SignUpPage.html">Sign up</a>
+                </span>
+            </div>
         </div>
     </div>
-</footer>    
-<script>
-var emailRegex = /^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/;
-var passwordRegex = /^[A-Z][a-z]+\d/;
 
-var signInMsgBtn = document.getElementById("signInBtn");
+    <footer>
+        <div class="footer-1">
+            <a href="#"><i class="fab fa-facebook icons fa-2x"></i></a>
+            <a href="#"><i class="fab fa-instagram icons fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter icons fa-2x"></i></a>
+            <a href="#"><i class="fab fa-youtube icons fa-2x"></i></a>
+            <a href="#"><i class="fab fa-pinterest icons fa-2x"></i></a>
 
-var emailMsg = document.getElementById("emailMessage");
-var passwordMsg = document.getElementById("passwordMessage");
+        </div>
+        <div class="footer-2">
+            <div class="footer-menu">
+                <ul>
+                    <a href="#">
+                        <li>About Us</li>
+                    </a>
+                    <p>•</p>
+                    <a href="#">
+                        <li>Contact Us</li>
+                    </a>
+                    <p>•</p>
+                    <a href="#">
+                        <li>Privacy Policy</li>
+                    </a>
+                </ul>
+                <p class="copyrights">Copyright © 2021. Company. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //Buger menu
+        const mainMenu = document.querySelector('.mainMenu');
+        const closeMenu = document.querySelector('.closeMenu');
+        const openMenu = document.querySelector('.openMenu');
 
-//Validimi per SignIn form
-signInMsgBtn.addEventListener("click", function(event){
-    var email = document.getElementById('email').value;
-    var password = document.getElementById("password").value;
-    
-    if(email === ""){
-        emailMsg.innerText = "Type your email";
-        event.preventDefault();
-    }
-    else{
-        if(emailRegex.test(email)){
-            alert("Email: " + email);
-        }
-        else{
-            emailMsg.innerText = "Type a valid email address";
-            event.preventDefault();
-        }
-    }
+        openMenu.addEventListener('click', show);
+        closeMenu.addEventListener('click', close);
 
-    if(password ===""){
-        passwordMsg.innerText = "Type your password"; 
-    }
-    else{
-        if(passwordRegex.test(password)){
-            alert("Password: " + password);
+        function show() {
+            mainMenu.style.display = 'flex';
+            mainMenu.style.top = '0';
         }
-        else{
-            passwordMsg.innerText = "Wrong password"
-            event.preventDefault();
+        function close() {
+            mainMenu.style.top = '-100%';
         }
-    }
-});
-</script>
+        
+        var emailRegex = /^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/;
+        var passwordRegex = /^[A-Z][a-z]+\d/;
+
+        var signInMsgBtn = document.getElementById("signInBtn");
+
+        var emailMsg = document.getElementById("emailMessage");
+        var passwordMsg = document.getElementById("passwordMessage");
+
+        //Validimi per SignIn form
+        signInMsgBtn.addEventListener("click", function (event) {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById("password").value;
+
+            if (email === "") {
+                emailMsg.innerText = "Type your email";
+                event.preventDefault();
+                let myFunction = function () {
+                    document.getElementById("sCon").style.height = "430px";
+                }
+                myFunction();
+            }
+            else {
+                if (!emailRegex.test(email)) {
+                    emailMsg.innerText = "Type a valid email address";
+                    event.preventDefault();
+                    let myFunction = function () {
+                        document.getElementById("sCon").style.height = "430px";
+                    }
+                    myFunction();
+                }
+            }
+
+            if (password === "") {
+                passwordMsg.innerText = "Type your password";
+                event.preventDefault();
+                let myFunction = function () {
+                    document.getElementById("sCon").style.height = "430px";
+                }
+                myFunction();
+            }
+            else {
+                if (!passwordRegex.test(password)) {
+                    passwordMsg.innerText = "Wrong password"
+                    event.preventDefault();
+                    let myFunction = function () {
+                        document.getElementById("sCon").style.height = "430px";
+                    }
+                    myFunction();
+                }
+            }
+        });
+    </script>
 </body>
+
 </html>
