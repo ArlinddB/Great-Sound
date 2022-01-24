@@ -30,7 +30,34 @@
     <main class="product">
         <div class="rectangle">
             <div class="rectangle1">
-                <img src="./Img/Headphones.jpg" class="productImg">
+                <div class="slideshow-container">
+
+                    <div class="mySlides">
+                        <img src="./Img/Demo1.jpg">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="./Img/Demo2.jpg">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="./Img/Demo3.jpg">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="./Img/Demo4.jpg">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
             </div>
             <div class="productContent">
                 <h1 class="pCTitle">Headphones</h1>
@@ -76,7 +103,6 @@
         </div>
     </footer>
     <script>
-        //Buger menu
         const mainMenu = document.querySelector('.mainMenu');
         const closeMenu = document.querySelector('.closeMenu');
         const openMenu = document.querySelector('.openMenu');
@@ -90,6 +116,60 @@
         }
         function close() {
             mainMenu.style.top = '-100%';
+        }
+
+        //Slideri
+        var slideIndex = 0;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var y = document.getElementsByClassName("dot");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < y.length; i++) {
+                y[i].className = y[i].className.replace(" active", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            y[slideIndex - 1].className += " active";
+
+            setTimeout(carousel, 6500);
         }
     </script>
 </body>

@@ -6,7 +6,7 @@
     margin: 0;
     font-family: 'Catamaran', sans-serif;
 }
-
+/*Navbar menu*/
 nav {
     color: #fff;
     display: flex;
@@ -27,8 +27,9 @@ nav .mainMenu li a {
 }
 nav .mainMenu li a:hover {
     background: #40DDFF;
+    color: #fff;
     border-radius: 8px;
-    transition: 1s;
+    transition: .7s;
 }
 nav .openMenu {
     font-size: 2rem;
@@ -125,7 +126,7 @@ nav .mainMenu .closeMenu , .icons i {
     text-decoration: none;
     color: #fff;
 }
-
+/*Pjesa pare e homepage*/
 .container{
     display: flex;
     justify-content: center;
@@ -184,7 +185,7 @@ nav .mainMenu .closeMenu , .icons i {
     transform: scale(1.1);
     background-color: #b61b38;
 }
-
+/*Pjesa pare e homepage*/
 .container1{
     margin-top: 100px;
     width: 100%;
@@ -231,7 +232,7 @@ nav .mainMenu .closeMenu , .icons i {
         font-size: 1rem;
     }
 }
-
+/*Pjesa e product features*/
 .features-text{
     margin-top: 100px;
     margin-bottom: 50px;
@@ -292,6 +293,7 @@ nav .mainMenu .closeMenu , .icons i {
     padding: 30px 30px 5px;
 }
 
+/*Pjesa per product page*/
 .product{
     padding: 10px;
     animation: 1s ease-out rotate;
@@ -320,32 +322,9 @@ nav .mainMenu .closeMenu , .icons i {
 
 .rectangle1 {
     display: flex;
-    align-items: flex-end;
     border-bottom: 500px solid #fff;
     border-right: 120px solid transparent;
     box-shadow: -5px 5px 4px #c4c4c4;
-}
-
-@media (max-width: 930px) {
-    div.rectangle{
-        width: 450px;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 25px;
-    }
-    div.rectangle1{
-        border: none;
-        box-shadow: none;
-    }
-    div.rectangle1 img{
-        margin-bottom: 0;
-        width: 450px;
-    }
-    div.productContent{
-        text-align: left;
-        padding-left: 50px;
-    }    
 }
 
 .productContent {
@@ -361,10 +340,6 @@ nav .mainMenu .closeMenu , .icons i {
 
 .productContent p {
     padding: 25px 0 15px 0;
-}
-
-.productImg {
-    margin-bottom: -115%;
 }
 
 .price{
@@ -390,6 +365,109 @@ nav .mainMenu .closeMenu , .icons i {
     transform: scale(1.1);
 }
 
+@media (max-width: 930px) {
+    div.rectangle{
+        width: 450px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 25px;
+    }
+    div.rectangle1{
+        border: none;
+        box-shadow: none;
+    }
+    div.rectangle1 img{
+        margin-bottom: 0;
+        width: 450px;
+    }
+    div.productContent{
+        text-align: left;
+        padding-left: 50px;
+    }
+      
+    div .mySlides img{
+        box-shadow: none;
+    }
+      
+    div .prev, div .next {
+        margin-top: -60%;
+        margin-right: -105px;
+    }
+      
+    div .dot {
+        display: none;    
+    }
+      
+      .active, .dot:hover {
+        background-color: #717171;
+      }  
+}
+
+/*Slider*/
+.slideshow-container {
+    max-width: 345px;
+    position: relative;
+  }
+  
+  .mySlides {
+    display: flex;
+  }
+  
+  .mySlides img{
+    width: 448px;
+    height: 300px;
+    margin-bottom: -115%;
+    box-shadow: -5px 8px 12px #c4c4c4;
+    animation: fadein 2.2s;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    margin-top: 60%;
+    margin-right: -103px;
+    padding: 16px;
+    background-color: rgb(196, 196, 196, 0.6);
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+  }
+  
+  .dots{
+      margin-left: -35%;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 3px;
+    margin-top: 570%;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+/*Pjesa e SignIn*/
 .sInsUpC {
 	display: flex;
 	align-items: center;
@@ -454,10 +532,6 @@ nav .mainMenu .closeMenu , .icons i {
 	width: 85%;
 	transition: .2s;
 }
-.nl{
-    display: flex;
-    justify-content: space-between;
-}
 
 .message{
     color: rgb(255, 0, 0, 0.8);
@@ -519,7 +593,7 @@ nav .mainMenu .closeMenu , .icons i {
     color: #2481ee;
     padding-left: 10px;
 }
-
+/*Pjesa e SignUp*/
 .signUp {
 	width: 320px;
 	padding: 30px;
@@ -536,6 +610,11 @@ nav .mainMenu .closeMenu , .icons i {
 .row {
     display: flex;
     justify-content: center;
+}
+
+.nl{
+    display: flex;
+    justify-content: space-between;
 }
   
 .signUp_input {
@@ -634,7 +713,7 @@ input[type="radio"]{
     color: #2481ee;
     padding-left: 10px;
 }
-
+/*Footer-i*/
 .footer-1{
     display: flex;
     justify-content: center;
