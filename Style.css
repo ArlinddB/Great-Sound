@@ -491,12 +491,6 @@ nav .mainMenu .closeMenu , .icons i {
 	box-shadow: 0px 0px 20px #5C5696;
 }
 
-.sCon1 {		
-	background: rgb(196, 196, 196, 0.2);	
-	height: 500px;	
-	box-shadow: 0px 0px 20px #5C5696;
-}
-
 .sCon_content {
 	z-index: 1;
 	position: relative;	
@@ -535,10 +529,6 @@ nav .mainMenu .closeMenu , .icons i {
 
 .message{
     color: rgb(255, 0, 0, 0.8);
-}
-
-#lastnameMessage{
-    margin-right: 13px;
 }
 
 .login_input:active,
@@ -600,6 +590,12 @@ nav .mainMenu .closeMenu , .icons i {
 	padding-top: 35px;    
 }
 
+.sCon1 {		
+	background: rgb(196, 196, 196, 0.2);	
+	height: 500px;	
+	box-shadow: 0px 0px 20px #5C5696;
+}
+
 .signUp_field {
 	padding: 10px 0px;	
     display: flex;
@@ -615,6 +611,10 @@ nav .mainMenu .closeMenu , .icons i {
 .nl{
     display: flex;
     justify-content: space-between;
+}
+
+.nl .message{
+    padding-right: 15px;
 }
   
 .signUp_input {

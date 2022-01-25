@@ -33,32 +33,32 @@
                 <form class="signUp">
                     <div class="row">
                         <div class="signUp_field">
-                            <input type="text" class="signUp_input" placeholder="Firstname" id="name">
+                            <input type="text" class="signUp_input" placeholder="Firstname" id="name1">
                         </div>
                         <div class="signUp_field">
-                            <input type="text" class="signUp_input" placeholder="Lastname" id="lastname">
+                            <input type="text" class="signUp_input" placeholder="Lastname" id="lastname1">
                         </div>
                     </div>
                     <div class="nl">
-                        <label for="name" id="nameMessage" class="message"></label>
-                        <label for="lastname" id="lastnameMessage" class="message"></label>
+                        <label for="name" id="nameMessage1" class="message"></label>
+                        <label for="lastname" id="lastnameMessage1" class="message"></label>
                     </div>
                     <div class="signUp_field">
-                        <input type="text" class="signUp_input" placeholder="Username" id="username">
+                        <input type="text" class="signUp_input" placeholder="Username" id="username1">
                     </div>
-                    <label for="username" id="usernameMessage" class="message"></label>
+                    <label for="username" id="usernameMessage1" class="message"></label>
                     <div class="signUp_field">
-                        <input type="text" class="signUp_input" placeholder="Email address" id="email">
+                        <input type="text" class="signUp_input" placeholder="Email address" id="email1">
                     </div>
-                    <label for="email" id="emailMessage" class="message"></label>
+                    <label for="email" id="emailMessage1" class="message"></label>
                     <div class="signUp_field">
-                        <input type="password" class="signUp_input" placeholder="Password" id="password">
+                        <input type="password" class="signUp_input" placeholder="Password" id="password1">
                     </div>
-                    <label for="password" id="passwordMessage" class="message"></label>
+                    <label for="password" id="passwordMessage1" class="message"></label>
                     <div class="signUp_field">
-                        <input type="date" class="signUp_input" id="date">
+                        <input type="date" class="signUp_input" id="date1">
                     </div>
-                    <label for="date" id="dateMessage" class="message"></label>
+                    <label for="date" id="dateMessage1" class="message"></label>
                     <div class="signUp_field">
                         <div class="genderSelection">
                             <label for="M">Male</label>
@@ -108,153 +108,7 @@
         </div>
     </footer>
 
-    <script>
-        //Buger menu
-        const mainMenu = document.querySelector('.mainMenu');
-        const closeMenu = document.querySelector('.closeMenu');
-        const openMenu = document.querySelector('.openMenu');
-
-        openMenu.addEventListener('click', show);
-        closeMenu.addEventListener('click', close);
-
-        function show() {
-            mainMenu.style.display = 'flex';
-            mainMenu.style.top = '0';
-        }
-        function close() {
-            mainMenu.style.top = '-100%';
-        }
-        
-        var emailRegex = /^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/;
-        var passwordRegex = /^[A-Z][a-z]+\d/;
-        var nameRegex = /^[A-Z][a-z]/;
-        var lastNameRegex = /^[A-Z][a-z]/;
-        var usernameRegex = /^[A-Za-z]\w{6,14}$/;
-
-        var signUpMsgBtn = document.getElementById("signUpBtn");
-
-        var nameMsg = document.getElementById("nameMessage");
-        var lastNameMsg = document.getElementById("lastnameMessage");
-        var usernameMsg = document.getElementById("usernameMessage");
-        var emailMsg = document.getElementById("emailMessage");
-        var passwordMsg = document.getElementById("passwordMessage");
-        var dateMsg = document.getElementById("dateMessage");
-
-
-        //Validimi per SignUp form
-        signUpMsgBtn.addEventListener("click", function (event) {
-            var name = document.getElementById('name').value;
-            var lastname = document.getElementById('lastname').value;
-            var username = document.getElementById('username').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById("password").value;
-            var date = document.getElementById('date').value;
-
-
-            if (name === "") {
-                nameMsg.innerText = "Type your name";
-                event.preventDefault();
-                let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "630px";
-                }
-                myFunction();
-            }
-            else {
-                if (!nameRegex.test(name)) {
-                    nameMsg.innerText = "Name should start \n with a capital letter";
-                    event.preventDefault();
-                    let myFunction = function () {
-                        document.getElementById("sCon1").style.height = "630px";
-                    }
-                    myFunction();
-                }
-            }
-
-            if (lastname === "") {
-                lastNameMsg.innerText = "Type your lastname";
-                event.preventDefault();
-                let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "630px";
-                }
-                myFunction();
-            }
-            else {
-                if (!lastNameRegex.test(lastname)) {
-                    lastNameMsg.innerText = "Lastname should start \n with a capital letter";
-                    event.preventDefault();
-                    let myFunction = function () {
-                        document.getElementById("sCon1").style.height = "630px";
-                    }
-                    myFunction();
-                }
-            }
-
-            if (username === "") {
-                usernameMsg.innerText = "Type your username";
-                event.preventDefault();
-                let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "630px";
-                }
-                myFunction();
-            }
-            else {
-                if (!usernameRegex.test(username)) {
-                    usernameMsg.innerText = "Username should be between 6 and 14 characters"
-                    event.preventDefault();
-                    let myFunction = function () {
-                        document.getElementById("sCon1").style.height = "630px";
-                    }
-                    myFunction();
-                }
-            }
-
-            if (email === "") {
-                emailMsg.innerText = "Type your email";
-                event.preventDefault();
-                let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "630px";
-                }
-                myFunction();
-            }
-            else {
-                if (!emailRegex.test(email)) {
-                    emailMsg.innerText = "Type a valid email address";
-                    event.preventDefault();
-                    let myFunction = function () {
-                        document.getElementById("sCon1").style.height = "630px";
-                    }
-                    myFunction();
-                }
-            }
-
-            if (password === "") {
-                passwordMsg.innerText = "Type your password";
-                event.preventDefault();
-                let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "630px";
-                }
-                myFunction();
-            }
-            else {
-                if (!passwordRegex.test(password)) {
-                    passwordMsg.innerText = "Password should start with a capital letter and contain at least one number"
-                    event.preventDefault();
-                    let myFunction = function () {
-                        document.getElementById("sCon1").style.height = "630px";
-                    }
-                    myFunction();
-                }
-            }
-
-            if (date === "") {
-                dateMsg.innerText = "Fill your birthdate";
-                event.preventDefault();
-                let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "630px";
-                }
-                myFunction();
-            }
-        });
+    <script src="Main.js">
 
     </script>
 </body>

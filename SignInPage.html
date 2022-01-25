@@ -81,74 +81,8 @@
             </div>
         </div>
     </footer>
-    <script>
-        //Buger menu
-        const mainMenu = document.querySelector('.mainMenu');
-        const closeMenu = document.querySelector('.closeMenu');
-        const openMenu = document.querySelector('.openMenu');
+    <script src="Main.js">
 
-        openMenu.addEventListener('click', show);
-        closeMenu.addEventListener('click', close);
-
-        function show() {
-            mainMenu.style.display = 'flex';
-            mainMenu.style.top = '0';
-        }
-        function close() {
-            mainMenu.style.top = '-100%';
-        }
-        
-        var emailRegex = /^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/;
-        var passwordRegex = /^[A-Z][a-z]+\d/;
-
-        var signInMsgBtn = document.getElementById("signInBtn");
-
-        var emailMsg = document.getElementById("emailMessage");
-        var passwordMsg = document.getElementById("passwordMessage");
-
-        //Validimi per SignIn form
-        signInMsgBtn.addEventListener("click", function (event) {
-            var email = document.getElementById('email').value;
-            var password = document.getElementById("password").value;
-
-            if (email === "") {
-                emailMsg.innerText = "Type your email";
-                event.preventDefault();
-                let myFunction = function () {
-                    document.getElementById("sCon").style.height = "430px";
-                }
-                myFunction();
-            }
-            else {
-                if (!emailRegex.test(email)) {
-                    emailMsg.innerText = "Type a valid email address";
-                    event.preventDefault();
-                    let myFunction = function () {
-                        document.getElementById("sCon").style.height = "430px";
-                    }
-                    myFunction();
-                }
-            }
-
-            if (password === "") {
-                passwordMsg.innerText = "Type your password";
-                event.preventDefault();
-                let myFunction = function () {
-                    document.getElementById("sCon").style.height = "430px";
-                }
-                myFunction();
-            }
-            else {
-                if (!passwordRegex.test(password)) {
-                    passwordMsg.innerText = "Wrong password"
-                    event.preventDefault();
-                    let myFunction = function () {
-                        document.getElementById("sCon").style.height = "430px";
-                    }
-                    myFunction();
-                }
-            }
-        });
     </script>
 </body>
 
