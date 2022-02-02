@@ -97,8 +97,8 @@ nav .mainMenu .closeMenu , .icons i {
     nav .mainMenu .closeMenu {
         display: block;
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 30px;
+        right: 45px;
 
     }
     nav .openMenu {
@@ -713,6 +713,106 @@ input[type="radio"]{
     color: #2481ee;
     padding-left: 10px;
 }
+
+/*Contact Us*/
+.contact-container{
+    padding: 50px;
+    margin-top: 25px;
+    height: 75vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-form{
+    width: 50%;
+    animation: fadein 1.5s;
+}
+
+.contact-form form {
+    margin: 25px 0 0 50px;
+}
+
+.contact-form input{
+    border: none;
+	border-bottom: 2px solid #D1D1D4;
+}
+
+.form-field {
+    padding: 15px;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    border-radius: 2px;
+    border: none;
+}
+
+.contact-form-input{
+    padding: 5px;
+    height: 40px;
+    width: 200px;
+    margin-right: 25px;
+    border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
+	width: 100%;
+	transition: .5s;
+}
+
+.contact-form-input:focus,
+.contact-form-input:hover{
+    outline: none;
+    border-bottom-color: #6A679E;
+}
+
+textarea.contact-form-input{
+    height: 80px;
+    resize: none;
+    overflow:auto;
+}
+
+.contact-form input[type="submit"]{
+    width: 160px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #6A679E;
+    background-color: #fff;
+    border: 1px solid #6A679E;
+    border-radius: 3px;
+}
+
+.contact-form input[type="submit"]:hover{
+    background-color: #6A679E;
+    color: #fff;
+    border: none;
+    transition: .3s ease;
+}
+
+.message-display{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-left: 20px;
+}
+
+#contact-form-number{
+    margin-right: -60px;
+}
+
+.map-container{
+    width: 50%;
+    animation: fadein 1.5s;
+}
+
+.map-container > .map{
+    border: 0;
+    width: 90%;
+    height: 85%;
+}
+
 /*Footer-i*/
 .footer-1{
     display: flex;

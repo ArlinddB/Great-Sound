@@ -10,11 +10,71 @@ function show() {
     mainMenu.style.display = 'flex';
     mainMenu.style.top = '0';
 }
+show();
 function close() {
     mainMenu.style.top = '-100%';
 }
+close();
+
+//Validimi per SignIn form
+var emailRgx = /^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/;
+var phoneRgx = /[0-9]{12}/;
 
 
+var nameMessage = document.getElementById("contact-form-fName");
+var lastnameMessage = document.getElementById("contact-form-lName");
+var emailMessage = document.getElementById("form-emailMessage");
+var phoneMessage = document.getElementById("contact-form-number");
+var formMsg = document.getElementById("contact-form-message");
+
+var sendBtn = document.getElementById("SendItBtn");
+if (sendBtn) {
+    sendBtn.addEventListener("click", function (event) {
+        var name = document.getElementById('form-firstName').value;
+        var lastname = document.getElementById('from-lastName').value;
+        var email = document.getElementById('form-email').value;
+        var phone = document.getElementById('form-number').value;
+        var message = document.getElementById('form-message').value;
+
+        if(name === ""){
+            nameMessage.innerText = "This field is required"
+            event.preventDefault();
+        }
+        
+        if(lastname === ""){
+            lastnameMessage.innerText = "This field is required"
+            event.preventDefault();
+        }
+
+        if (email === "") {
+            emailMessage.innerText = "This field is required";
+            event.preventDefault();
+        }
+        else{
+            if (!emailRgx.test(email)) {
+                emailMessage.innerText = "Type a valid email address";
+                event.preventDefault();
+               
+            }
+        }
+        if(phone === ""){
+            phoneMessage.innerText = ""
+            event.preventDefault();
+        }
+        else{
+            if(!phoneRgx.test(phone)){
+                phoneMessage.innerText = "Should contain only numbers"
+                event.preventDefault();
+            }
+        }
+
+        if(message === ""){
+            formMsg.innerText = "This field is required"
+            event.preventDefault();
+        }
+        
+    });
+}
 
 //Validimi per SignIn form
 var emailRegex = /^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/;
@@ -255,4 +315,5 @@ if (signUpMsgBtn) {
      y[slideIndex - 1].className += " active";
 
      setTimeout(carousel, 6500);
- }
+}
+
