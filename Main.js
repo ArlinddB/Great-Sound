@@ -12,13 +12,13 @@ function show() {
 }
 show();
 function close() {
-    mainMenu.style.top = '-100%';
+    mainMenu.style.top = '-105%';
 }
 close();
 
-//Validimi per SignIn form
+//Validimi per Contact form
 var emailRgx = /^\w+([._-]?\w+)*@[a-z]+[-]?[a-z]*\.[a-z]{2,3}/;
-var phoneRgx = /[0-9]{12}/;
+var phoneRgx = /[0-9]{6,12}/;
 
 
 var nameMessage = document.getElementById("contact-form-fName");
@@ -119,10 +119,10 @@ if (signInMsgBtn) {
         }
         else {
             if (!passwordRegex.test(password)) {
-                passwordMsg.innerText = "Wrong password"
+                passwordMsg.innerText = "Password should start with \ncapital letter and have one digit"
                 event.preventDefault();
                 let myFunction = function () {
-                    document.getElementById("sCon").style.height = "430px";
+                    document.getElementById("sCon").style.height = "450px";
                 }
                 myFunction();
             }
@@ -160,7 +160,7 @@ if (signUpMsgBtn) {
             nameMsg1.innerText = "Type your name";
             event.preventDefault();
             let myFunction = function () {
-                document.getElementById("sCon1").style.height = "710px";
+                document.getElementById("sCon1").style.height = "680px";
             }
             myFunction();
         }
@@ -169,7 +169,7 @@ if (signUpMsgBtn) {
                 nameMsg1.innerText = "Name should start \n with a capital letter";
                 event.preventDefault();
                 let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "710px";
+                    document.getElementById("sCon1").style.height = "680px";
                 }
                 myFunction();
             }
@@ -179,7 +179,7 @@ if (signUpMsgBtn) {
             lastNameMsg1.innerText = "Type your lastname";
             event.preventDefault();
             let myFunction = function () {
-                document.getElementById("sCon1").style.height = "710px";
+                document.getElementById("sCon1").style.height = "680px";
             }
             myFunction();
         }
@@ -188,7 +188,7 @@ if (signUpMsgBtn) {
                 lastNameMsg1.innerText = "Lastname should start \n with a capital letter";
                 event.preventDefault();
                 let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "710px";
+                    document.getElementById("sCon1").style.height = "680px";
                 }
                 myFunction();
             }
@@ -198,7 +198,7 @@ if (signUpMsgBtn) {
             usernameMsg1.innerText = "Type your username";
             event.preventDefault();
             let myFunction = function () {
-                document.getElementById("sCon1").style.height = "710px";
+                document.getElementById("sCon1").style.height = "680px";
             }
             myFunction();
         }
@@ -207,7 +207,7 @@ if (signUpMsgBtn) {
                 usernameMsg1.innerText = "Username should be between 6 and 14 characters"
                 event.preventDefault();
                 let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "710px";
+                    document.getElementById("sCon1").style.height = "680px";
                 }
                 myFunction();
             }
@@ -217,7 +217,7 @@ if (signUpMsgBtn) {
             emailMsg1.innerText = "Type your email";
             event.preventDefault();
             let myFunction = function () {
-                document.getElementById("sCon1").style.height = "710px";
+                document.getElementById("sCon1").style.height = "680px";
             }
             myFunction();
         }
@@ -226,7 +226,7 @@ if (signUpMsgBtn) {
                 emailMsg1.innerText = "Type a valid email address";
                 event.preventDefault();
                 let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "710px";
+                    document.getElementById("sCon1").style.height = "680px";
                 }
                 myFunction();
             }
@@ -236,7 +236,7 @@ if (signUpMsgBtn) {
             passwordMsg1.innerText = "Type your password";
             event.preventDefault();
             let myFunction = function () {
-                document.getElementById("sCon1").style.height = "710px";
+                document.getElementById("sCon1").style.height = "680px";
             }
             myFunction();
         }
@@ -245,7 +245,7 @@ if (signUpMsgBtn) {
                 passwordMsg1.innerText = "Password should start with a capital letter and contain at least one number"
                 event.preventDefault();
                 let myFunction = function () {
-                    document.getElementById("sCon1").style.height = "710px";
+                    document.getElementById("sCon1").style.height = "680px";
                 }
                 myFunction();
             }
@@ -255,7 +255,7 @@ if (signUpMsgBtn) {
             dateMsg1.innerText = "Fill your birthdate";
             event.preventDefault();
             let myFunction = function () {
-                document.getElementById("sCon1").style.height = "710px";
+                document.getElementById("sCon1").style.height = "680px";
             }
             myFunction();
         }

@@ -16,6 +16,7 @@ nav {
 nav .mainMenu {
     display: flex;
     list-style: none;
+    padding-top: 10px;
 }
 nav .mainMenu li a {
     margin-top: 10px;
@@ -45,9 +46,14 @@ nav .mainMenu .closeMenu , .icons i {
 
 .logo {
     margin: 6px;
-    font-size: 25px;
     cursor: pointer;
-    color: #000;
+    
+}
+
+.logo img{
+    margin: 0;
+    width: 75px;
+    height: 75px;
 }
 
 .signInBtn{
@@ -280,7 +286,14 @@ nav .mainMenu .closeMenu , .icons i {
     text-align: center;
 }
 
-@media screen and (max-width: 940px){
+@media(max-width:1250px){
+    div.features-box{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 955px){
     div.features{
         display: flex;
         flex-direction: column;
@@ -403,7 +416,6 @@ nav .mainMenu .closeMenu , .icons i {
         background-color: #717171;
       }  
 }
-
 /*Slider*/
 .slideshow-container {
     max-width: 345px;
@@ -467,7 +479,8 @@ nav .mainMenu .closeMenu , .icons i {
   .active, .dot:hover {
     background-color: #717171;
   }
-/*Pjesa e SignIn*/
+
+  /*Pjesa e SignIn*/
 .sInsUpC {
 	display: flex;
 	align-items: center;
@@ -592,7 +605,7 @@ nav .mainMenu .closeMenu , .icons i {
 
 .sCon1 {		
 	background: rgb(196, 196, 196, 0.2);	
-	height: 500px;	
+	height: 520px;	
 	box-shadow: 0px 0px 20px #5C5696;
 }
 
@@ -668,15 +681,14 @@ input[type="radio"]{
 	border-bottom-color: #6A679E;
 }
 
-.signUp_submit {
+form .signUp_submit {
 	background: #fff;
 	font-size: 14px;
-    margin-left: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
 	padding: 16px 20px;
 	border-radius: 26px;
 	border: 1px solid #D4D3E8;
-    width: 80%;
+    width: 97%;
 	text-transform: uppercase;
 	font-weight: 700;
 	display: flex;
@@ -713,14 +725,13 @@ input[type="radio"]{
     color: #2481ee;
     padding-left: 10px;
 }
-
-/*Contact Us*/
+  /*Contact Us*/
 .contact-container{
     padding: 50px;
     margin-top: 25px;
     height: 75vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .contact-form{
@@ -729,7 +740,8 @@ input[type="radio"]{
 }
 
 .contact-form form {
-    margin: 25px 0 0 50px;
+    margin: 25px 0 0 0;
+    padding: 10px;
 }
 
 .contact-form input{
@@ -739,7 +751,7 @@ input[type="radio"]{
 
 .form-field {
     padding: 15px;
-    width: 80%;
+    width: 100%;
     height: 100%;
     display: flex;
     border-radius: 2px;
@@ -792,19 +804,23 @@ textarea.contact-form-input{
 }
 
 .message-display{
+    width: 100%;
+    margin-left: 15px;
     display: flex;
     justify-content: space-between;
-    width: 60%;
-    margin-left: 20px;
+}
+#contact-form-lName{
+   margin-right: 25px;
 }
 
 #contact-form-number{
-    margin-right: -60px;
+    margin-right: 25px
 }
 
 .map-container{
     width: 50%;
     animation: fadein 1.5s;
+    padding: 10px;
 }
 
 .map-container > .map{
@@ -813,54 +829,295 @@ textarea.contact-form-input{
     height: 85%;
 }
 
+
+@media(max-width: 1210px) {
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30%;
+        width: 90%;
+    }
+
+    .map-container  {
+        padding: 0;
+        margin-left: 45px;
+        width: 50%;
+    }
+    .map-container .map{
+        height: 40vh;
+    }
+    
+}
+
+@media (max-width: 1000px){
+    .contact-container{
+        padding-bottom: 350px;
+        margin-right: 15px;        
+    }
+    .contact-form{
+        width: 100%;
+    }
+    .form-field{
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 95%;
+    }
+    .message-display{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact-form-fName{
+        margin-top: -90px;
+    }
+
+    #contact-form-lName{
+        margin-top: 45px;
+    }
+
+    #form-emailMessage{
+        margin-top: -90px;
+    }
+
+    #contact-form-number{
+        margin-top: 45px;
+    }
+
+    #contact-form-message{
+        margin-top: -10px;
+        padding-bottom: 10px;
+    }
+
+    .contact-form-input{
+        margin-bottom: 20px;
+    }
+
+    .map-container  {
+        padding-top: 15px;
+        width: 100%;
+    }
+}
+/*About Us*/
+.aboutus-container{
+    padding-top: 85px;
+    padding-bottom: 35px;
+    display: flex;
+    width: 100%;
+    height: 65vh;
+    animation: 1s ease-out slideInFromBottom;
+}
+
+.aboutus-img {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.aboutus-img img{
+    width: 360px;
+    height: 400px;
+}
+
+.aboutus-text{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    text-align: justify;
+}
+.aboutus-text p{
+    width: 45%;
+}
+
+@media (max-width:1040px){
+    .aboutus-text p{
+        width: 60%;
+    }
+}
+
+@media (max-width: 780px) {
+    .aboutus-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 85px;
+        height: 125vh;
+    }
+
+    .aboutus-img{
+        justify-content: center;
+    }
+    
+    .aboutus-text{
+        width: 65%;
+    }
+
+    .aboutus-text p {
+        width: 100%;    
+    }
+}
 /*Footer-i*/
-.footer-1{
-    display: flex;
-    justify-content: center;
-    padding: 25px;
-    border-bottom: 1px solid #000;
-    background: rgb(196, 196, 196, 0.4);
-
+.footer{
+    padding: 50px 50px;
+    background-color: rgb(88, 88, 88);
 }
 
-.icons{
-    color: #2481ee;
-    padding: 10px 25px;
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right{
+	display: inline-block;
+	vertical-align: top;
 }
 
-.footer-2{
-    font-size: 1.2rem;
-    font-weight: 800;
-    padding: 30px;
-    background: rgb(196, 196, 196, 0.4);
+.logo img{
+    width: 75px;
+    height: 75px;
 }
 
-.footer-menu ul{
-    display: flex;
-    justify-content: space-evenly;
+.footer-left{
+    width: 40%;
+}
+
+.footer-links{
+    color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-links li{
     list-style: none;
-    width: 30%;
-    margin: auto;
+    display:inline-block;
 }
 
-.footer-menu p{
-    padding-left: 30px;
-    padding-right: 30px;
+.footer-links a{
+    display:inline-block;
+	line-height: 1.8;
+    font-weight: 400;
+	text-decoration: none;
+	color:  inherit;
 }
 
-.footer-menu a{
+.footer-links a:after{
+    content: "|";
+    font-weight:300;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.last-link{
+    padding-right: 15px;
+}
+
+.footer-links .last-link:after{
+    content: none;
+}
+
+.footer-company-name{
+    color: #222;
+    font-size: 15px;
+}
+
+.footer-center{
+    width: 35%;
+}
+
+.footer-center i{
+    background-color:  #33383b;
+	color: #ffffff;
+	font-size: 27px;
+	width: 41px;
+	height: 41px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-center p{
+    display: inline-block;
+	color: #ffffff;
+    font-weight: 400;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.footer-center span{
+    display:block;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 2;
+}
+
+.footer-center p a{
     text-decoration: none;
-    color: #000;
-}
-.footer-menu a:hover{
-    text-decoration: none;
-    color: #2481ee;
+    color: #40ddff;
 }
 
-.copyrights{
-    display: flex;
-    justify-content: center;
-    font-size: 1rem;
-    padding: 35px 50px 0px;
-    color: rgba(0, 0, 0, 0.6);
+.footer-right{
+    width: 20%;
+}
+.footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-icons{
+	margin-top: 25px;
+}
+
+.footer-icons a{
+	display: inline-block;
+	cursor: pointer;
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+@media (max-width: 880px) {
+
+	.footer{
+		font: bold 14px sans-serif;
+	}
+
+	.footer .footer-left,
+	.footer .footer-center,
+	.footer .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+    .footer-center i{
+	    margin: 10px 5px;
+    }
+
+    .footer-center .fa-phone{
+        margin-left: -10px;
+    }
+
+    .footer-center .fa-envelope{
+        margin-left: 38px;
+    }
 }
