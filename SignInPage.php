@@ -1,3 +1,9 @@
+<?php 
+
+include('./authentication/auth.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,6 +49,11 @@
                         <input type="password" class="login_input" placeholder="Password" id="password" name="password">
                         <label for="password" id="passwordMessage" class="message"></label>
                     </div>
+
+                    <?php if (isset($_GET['msg1'])) { ?>
+                            <p style="color: rgb(255, 0, 0, 0.8);"><?php echo $_GET['msg1']; ?></p>
+                    <?php } ?>
+
                     <button type="submit" onclick="myFunction()" class="button login_submit" id="signInBtn" name="login_btn">
                     <span class="button_text">Log In Now</span>
                     <i class="button_icon fas fa-chevron-right"></i>
