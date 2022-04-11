@@ -1,3 +1,8 @@
+
+<?php if (isset($_GET['msg'])) { ?>
+    <p class="msg"><?php echo $_GET['msg']; ?></p>
+<?php } ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +41,14 @@
 
             <div class="main-body">
                 <div class="headtitle">
-                    <span style="font-size: 18px;">Hii
+                    <span style="font-size: 18px;">Hii, 
+                     <?php 
+                    
+                    include("../adminConfig/AdminLoginController.php");
+                    $model = new AdminLoginController();
+                    $rows = $model->fetch();
+                        echo $rows; 
+                    ?> 
                     </span>
                     <h2>Overview</h2>
                 </div>
