@@ -2,7 +2,7 @@
 
 include("../config/connect.php");
 
-class Model{
+class admModel{
 
 
     public function __construct()
@@ -12,10 +12,10 @@ class Model{
     }
 
 
-    public function fetch(){
+    public function fetchAdmins(){
         $data = null;
 
-        $query = "SELECT * FROM `users`";
+        $query = "SELECT * FROM `admins`";
         if($sql = $this->conn->query($query)){
             while ($row = mysqli_fetch_assoc($sql)) {
                 $data[] = $row;
@@ -26,7 +26,7 @@ class Model{
 
     public function delete($id)
     {
-        $query = "DELETE FROM `users` WHERE id = '$id'";
+        $query = "DELETE FROM `admins` WHERE id = '$id'";
         if ($sql = $this->conn->query($query)) {
             return true;
         }
@@ -39,7 +39,7 @@ class Model{
 
         $data = null;
 
-        $query = "SELECT * FROM `users` WHERE id = '$id'";
+        $query = "SELECT * FROM `admins` WHERE id = '$id'";
         if ($sql = $this->conn->query($query)) {
             while($row = $sql->fetch_assoc()){
                 $data = $row;
@@ -48,24 +48,23 @@ class Model{
         return $data;
     }
 
-    public function addUser($firstname,$lastname,$username,$email,$password,$dob,$gender){
-        $register_query = "INSERT INTO `users`(firstname,lastname,username,email,password,dob,gender)
-        VALUES ('$firstname', '$lastname', '$username', '$email', '$password', '$dob','$gender')";
-        
-        $result = $this->conn->query($register_query);
-        return $result;
-    }
-
     public function update($data){
 
-        $query = "UPDATE `users` SET firstname='$data[firstname]', 
-        lastname='$data[lastname]', username ='$data[username]', email='$data[email]', password='$data[password]', dob='$data[dob]',gender='$data[gender]' WHERE id='$data[id]'";
+        $query = "UPDATE `admins` SET username ='$data[username]', password='$data[password]' WHERE id='$data[id]'";
 
         if ($sql = $this->conn->query($query)) {
             return true;
         }else{
             return false;
         }
+    }
+
+    public function addAdmin($username,$password){
+        $register_query = "INSERT INTO `admins`(username,password)
+        VALUES ('$username', '$password')";
+        
+        $result = $this->conn->query($register_query);
+        return $result;
     }
 }
 

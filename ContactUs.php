@@ -1,5 +1,44 @@
+<!-- <?php
+    if (isset($_POST['submit'])) {
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $mailFrom = $_POST['email'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+        
+        if($fname == '' && $lname == '' && $mailFrom == '' && $subject == '' && $message == ''){
+            header("Location: ContactUs.php?c-msg1=Message could not be sent!");
+            exit();
+        }else{
+
+            $to = "ab52106@ubt-uni.net";
+            // $subject = "Contact form";
+            
+            $header = "From:".$fname." ".$lname." \r\n";
+            $header .= "Cc:".$mailFrom." \r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-type: text/html\r\n";
+            
+            $retval = mail ($to,$subject,$message,$header);
+            
+            if( $retval){
+                //echo "<script>alert('Message was sent successfully')</script>";
+                header("Location: ContactUs.php?c-msg=<script>alert('Message was sent successfully')</script>");
+                exit();
+            }else {
+                header("Location: ContactUs.php?c-msg1=Message could not be sent!");
+                exit();
+            }
+        }
+    }
+?>  -->
+
+
 <!DOCTYPE html>
 <html lang="en">
+<!-- <?php if (isset($_GET['c-msg'])) { ?>
+                        <p><?php echo $_GET['c-msg']; ?></p>
+                    <?php } ?> -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +52,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="Index.html"><img src="./Img/Logo.png" alt="Logo"></a>
+            <a href="Index.php"><img src="./Img/Logo.png" alt="Logo"></a>
         </div>
         <div class="openMenu"><i class="fa fa-bars"></i></div>
         <ul class="mainMenu">
@@ -54,6 +93,11 @@
                 <div class="message-display">
                     <label for="message" id="contact-form-message" class="message"></label>
                 </div>
+
+                <!-- <?php if (isset($_GET['c-msg1'])) { ?>
+                        <p style="color: rgb(255, 0, 0, 0.8); margin-left: 15px; font-size: 18px;"><?php echo $_GET['c-msg1']; ?></p>
+                <?php } ?> -->
+
                <div class="form-field">
                     <input type="submit" value="Send it" id="SendItBtn" name="submit">
                 </div>

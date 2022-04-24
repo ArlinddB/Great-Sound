@@ -20,7 +20,7 @@ include('./authentication/auth.php');
 <body>
     <nav>
         <div class="logo">
-            <a href="Index.html"><img src="./Img/Logo.png" alt="Logo"></a>
+            <a href="Index.php"><img src="./Img/Logo.png" alt="Logo"></a>
         </div>
         <div class="openMenu"><i class="fa fa-bars"></i></div>
         <ul class="mainMenu">

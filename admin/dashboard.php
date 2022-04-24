@@ -36,6 +36,10 @@
                         <i class="far fa-user-edit"></i>
                         <a href="users.php">Users</a>
                     </li>
+                    <li>
+                        <i class="far fa-user-edit"></i>
+                        <a href="../AdminCrud/admins.php">Admins</a>
+                    </li>
                 </ul>
             </div>
 
@@ -53,9 +57,7 @@
                     <h2>Overview</h2>
                 </div>
                 <div class="btn">
-                    <form action="" method="post">
-                        <button type="submit" name="logout-btn" class="logout">Logout</button>
-                    </form>
+                    <a href="adminlogin.php"><button type="submit" name="logout-btn" class="logout">Logout</button></a>
                 </div>
                 <div class="cards">
                     <div class="row row-1">

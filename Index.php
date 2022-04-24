@@ -12,7 +12,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="Index.html"><img src="./Img/Logo.png" alt="Logo"></a>
+            <a href="Index.php"><img src="./Img/Logo.png" alt="Logo"></a>
         </div>
         <div class="openMenu"><i class="fa fa-bars"></i></div>
         <ul class="mainMenu">
@@ -32,12 +32,10 @@
             </div>
             <div class="block">
                 <h1>The heaphones of the future</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Iusto repudiandae maiores reiciendis! Ab aliquam eius maxime
-                    repudiandae expedita voluptatem ad est, obcaecati tempore,
-                    deserunt adipisci...
+                <p>Apple's W1 chip and industry-leading Bluetooth technology keep you connected farther with fewer drop-outs
+                With fast Fuel, a 10-minute charge gives 3 hours of play when battery is low...
                 </p>
-                <button class="readMoreBtn">Read More</button>
+                <a href="Product.php"><button class="readMoreBtn">Read More</button></a>
             </div>
         </div>
         <div class="container1">
@@ -45,12 +43,7 @@
                 <div class="overlay-section">
                     <h2>Loud & Clear</h2>
                     <h1>Best quality in market</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur
-                        adipisicing elit. Veritatis hic quia
-                        libero repellat saepe nihil laudantium
-                        sed voluptas fugiat alias adipisci ipsam
-                        blanditiis dicta ut totam soluta a unde,
-                        in natus officia nesciunt voluptates numquam?
+                    <p>Take calls, control your music, and activate Siri with the multifunction on-ear controls and microphone
                     </p>
                 </div>
             </div>
@@ -66,43 +59,34 @@
             <div class="features-box">
                 <div class="icon-title">
                     <i class="fas fa-headphones fa-3x"></i>
-                    <h2>Lorem</h2>
+                    <h2>iListen</h2>
                 </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Placeat maiores, ipsa
-                    perferendis numquam pariatur veritatis nemo
-                    deleniti quis illo doloribus laudantium quisquam,
-                    voluptates rem eos sapiente mollitia nam delectus
-                    modi.
+                <p>Sleek, streamlined design that’s durable and affordable to go everywhere you do
+                The sound and design you’ve come to love from Beats, with premium playback with 
+                fine-tuned acoustics that maximize clarity, breadth, and balance.
                 </p>
             </div>
             <div class="features-box">
                 <div class="icon-title">
                     <i class="fas fa-headphones fa-3x"></i>
-                    <h2>Lorem</h2>
+                    <h2>iListen</h2>
                 </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Placeat maiores, ipsa
-                    perferendis numquam pariatur veritatis nemo
-                    deleniti quis illo doloribus laudantium quisquam,
-                    voluptates rem eos sapiente mollitia nam delectus
-                    modi.
+                <p>Using the best Bluetooth feature, iListen headphones let you stream songs from tablets, 
+                    smartphones, and computers. Also, our Bluetooth feature allows you to switch between voice 
+                    and music, as well as volume-control and music play-back.
                 </p>
             </div>
             <div class="features-box">
                 <div class="icon-title">
                     <i class="fas fa-headphones fa-3x"></i>
-                    <h2>Lorem</h2>
+                    <h2>iListen</h2>
                 </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Placeat maiores, ipsa
-                    perferendis numquam pariatur veritatis nemo
-                    deleniti quis illo doloribus laudantium quisquam,
-                    voluptates rem eos sapiente mollitia nam delectus
-                    modi.
+                <p>Lhe range of our headphones varies from earplugs to full size headphones.
+                    You can also choose the size, type and technology of your headphones.
+                    We offer headphones with powerful deep bass (like Monster Beats) and visceral dynamic range.
                 </p>
             </div>
         </div>

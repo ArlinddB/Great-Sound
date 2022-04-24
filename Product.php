@@ -14,7 +14,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="Index.html"><img src="./Img/Logo.png" alt="Logo"></a>
+            <a href="Index.php"><img src="./Img/Logo.png" alt="Logo"></a>
         </div>
         <div class="openMenu"><i class="fa fa-bars"></i></div>
         <ul class="mainMenu">
@@ -61,13 +61,11 @@
             </div>
             <div class="productContent">
                 <h1 class="pCTitle">Headphones</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur
-                    adipisicing elit. Exercitationem molestias
-                    laudantium dolorem asperiores illo veniam est
-                    quisquam alias, veritatis inventore magnam unde
-                    distinctio minus, quidem dolorum ducimus saepe
-                    corporis corrupti, distinctio minus, quidem dolorum ducimus saepe
-                    corporis corrupti.
+                <p>High-performance wireless noise cancelling headphones
+                Compatible with iOS and Android devices.<br>
+                Pure adaptive noise canceling (pure ANC) actively blocks external noise
+                Real-time Audio calibration preserves a Premium listening experience
+                Up to 22 hours of battery life enables full-featured all-day wireless playback
                 </p>
                 <h1 class="price">€18.73</h1>
                 <button class="cartBtn">Add to Cart</button>

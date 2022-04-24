@@ -26,12 +26,7 @@ nav .mainMenu li a {
     color: #000;
     font-size: 20px;
 }
-nav .mainMenu li a:hover {
-    background: #40DDFF;
-    color: #fff;
-    border-radius: 8px;
-    transition: .7s;
-}
+
 nav .openMenu {
     font-size: 2rem;
     margin: 20px;
@@ -171,7 +166,7 @@ nav .mainMenu .closeMenu , .icons i {
 }
 
 .readMoreBtn{
-    display: flex;
+    /* display: flex; */
     background-color: #FF748D;
     border: none;
     border-radius: 20px 0px 20px;
@@ -187,6 +182,10 @@ nav .mainMenu .closeMenu , .icons i {
     transition-duration: 600ms;
 }
 
+.readMoreBtn a{
+    text-decoration: none;
+    color: #fff;
+}
 .readMoreBtn:hover{
     transform: scale(1.1);
     background-color: #b61b38;
